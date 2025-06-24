@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valeria Films</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado con el nombre del cine -->
+  <header>
+    <h1>Valeria Films</h1>
+  </header>
+
+  <!-- Contenedor de películas en cartelera -->
+  <main class="cartelera">
+    <!-- Película 1 -->
+    <div class="pelicula">
+      <img src="assets/img/pelicula1.jpg" alt="Póster película 1">
+      <h2>BALLERINA</h2>
+      <button onclick="verTrailer('1')">Ver Tráiler</button>
+    </div>
+
+    <!-- Repite este bloque para cada película -->
+    <div class="pelicula">
+      <img src="assets/img/pelicula2.jpg" alt="Póster película 2">
+      <h2>F1</h2>
+      <button onclick="verTrailer('2')">Ver Tráiler</button>
+    </div>
+
+    <div class="pelicula">
+      <img src="assets/img/pelicula3.jpg" alt="Póster película 3">
+      <h2>How to Train Your Dragon</h2>
+      <button onclick="verTrailer('3')">Ver Tráiler</button>
+    </div>
+
+    <div class="pelicula">
+      <img src="assets/img/pelicula4.jpg" alt="Póster película 4">
+      <h2>MISIÓN IMPOSIBLE 8: Sentencia Final</h2>
+      <button onclick="verTrailer('4')">Ver Tráiler</button>
+    </div>
+  </main>
+
+  <!-- Enlace al archivo JS -->
+  <script src="script.js"></script>
+</body>
+</html>

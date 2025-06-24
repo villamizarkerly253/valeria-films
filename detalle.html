@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle Película</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Detalle de la Película</h1>
+    <a href="index.html" class="boton-regresar">← Volver al Home</a>
+  </header>
+
+  <main class="detalle">
+    <div id="contenido"></div>
+  </main>
+
+  <script>
+    // Leer el parámetro de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    // Información de cada película (simulada)
+    const peliculas = {
+      "1": {
+        titulo: "BALLERINA",
+        trailer: "https://www.youtube.com/embed/0FSwsrFpkbw?si=Rpt3u2ACjzoM27yw",
+        sinopsis: "Ambientada durante los acontecimientos de John Wick: Chapter 3 – Parabellum, la película sigue a Eve Macarro (Ana de Armas), una asesina en formación que se adentra en las implacables tradiciones mortales de los Ruska Roma"
+      },
+      "2": {
+        titulo: "F1",
+        trailer: "https://www.youtube.com/embed/aw8YyC4B1EA?si=ActjdhsG0kx1dfhV",
+        sinopsis: "Apodado el más grande que nunca existió, Sonny Hayes (Brad Pitt) fue el fenómeno más prometedor de la FORMULA 1 en la década de 1990 hasta que un accidente en la pista casi acaba con su carrera. Treinta años después, es un piloto de alquiler nómada cuando se le acerca su antiguo compañero de equipo Rubén Cervantes (Javier Bardem), propietario de un equipo de Fórmula 1 en apuros que está al borde del colapso. Rubén convence a Sonny para que regrese a la Fórmula 1 y tenga una última oportunidad de salvar el equipo y ser el mejor del mundo. Pilotará junto a Joshua Pearce (Damson Idris), el novato del equipo que quiere marcar su propio ritmo. Pero a medida que rugen los motores, el pasado de Sonny le atrapa y descubre que en la FÓRMULA 1, tu compañero de equipo es tu competencia más feroz, y que el camino hacia la redención no es algo que puedas recorrer solo."
+      },
+      "3": {
+        titulo: "How to Train Your Dragon",
+        trailer: "https://www.youtube.com/embed/22w7z_lT6YM?si=Z_n_oFTsZg5yBkou",
+        sinopsis: "La película Cómo Entrenar a tu Dragón (2025) narra la historia de Hipo, un joven vikingo que desafía las tradiciones de su pueblo al hacerse amigo de un dragón llamado Desdentao, en lugar de cazarlo. La trama se desarrolla en la isla de Berk, donde vikingos y dragones han sido enemigos durante generaciones. Hipo, un personaje ingenioso e incomprendido, descubre que la amistad con Desdentao puede ser la clave para cambiar la visión de su pueblo sobre los dragones y traer la paz entre ambas especies.La película explora temas como la superación de prejuicios, la importancia de la amistad, y la búsqueda de la paz a través del entendimiento mutuo. La trama se complica cuando una antigua amenaza emerge, poniendo en peligro tanto a vikingos como a dragones, lo que obliga a Hipo y a Desdentao a unir fuerzas para proteger a sus seres queridos y a su nuevo hogar. La película, en esencia, muestra cómo la valentía, la empatía y la amistad pueden transformar incluso las relaciones más conflictivas."
+      },
+      "4": {
+        titulo: "MISIÓN IMPOSIBLE 8: Sentencia Final",
+        trailer: "https://www.youtube.com/embed/avz06PDqDbM",
+        sinopsis: "La nueva película de Misión Imposible, titulada Misión: Imposible - Sentencia Final, presenta a Ethan Hunt y su equipo enfrentándose a una amenaza de inteligencia artificial llamada La Entidad, que busca controlar el mundo. La historia se centra en la búsqueda de una llave que podría neutralizar a La Entidad, llevándolos a una carrera contra el tiempo y peligrosas situaciones. La película es una continuación directa de Sentencia Mortal - Parte 1, y se rumorea que podría ser el cierre de la saga. En detalle, la trama de Misión: Imposible - Sentencia Final sigue a Ethan Hunt y su equipo mientras buscan la manera de derrotar a La Entidad, una IA que ha tomado control de diversas tecnologías y busca dominar el mundo. La Entidad, convencida de que la humanidad es incapaz de autocontrolarse, planea tomar el control por la fuerza. Ethan y su equipo, incluyendo a Grace (interpretada por Hayley Atwell), deben encontrar la llave que les permita acceder al núcleo de La Entidad y neutralizarla. La película también explora temas de actualidad como la amenaza de la inteligencia artificial y el impacto de la tecnología avanzada. Además, se ha especulado sobre el posible final de la franquicia con esta entrega, con referencias a momentos clave de películas anteriores, lo que sugiere una culminación de la historia. El director, Christopher McQuarrie, ha mencionado que cada elección en la saga ha llevado a este punto, insinuando un final épico y satisfactorio. "
+      }
+    };
+
+    const pelicula = peliculas[id];
+    const contenedor = document.getElementById("contenido");
+
+    if (pelicula) {
+      contenedor.innerHTML = `
+        <h2>${pelicula.titulo}</h2>
+        <iframe width="560" height="315" src="${pelicula.trailer}" frameborder="0" allowfullscreen></iframe>
+        <p>${pelicula.sinopsis}</p>
+      `;
+    } else {
+      contenedor.innerHTML = "<p>Película no encontrada.</p>";
+    }
+  </script>
+</body>
+</html>
